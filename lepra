@@ -1,0 +1,75 @@
+#include <iostream>
+
+using namespace std;
+
+typedef class Polinomio2{
+    private:
+        float Pol[100][100];
+        int Gradomaxx1=0;
+        int Gradomaxy1=0;
+        int Gradomaxx2=0;
+        int Gradomaxy2=0;
+    public:
+        Polinomio2();
+        void crear();
+        void mostrar();
+        Polinomio2 sumar();
+        Polinomio2 multiplicar();
+        int evaluar();
+        Polinomio2 dfx();
+        Polinomio2 dfy();
+}
+
+void crear(int grx1, int gry1, float coef1, int grx2, int gry2, float coef2){
+    Polinomio2 Poli1, Poli2;
+    Poli1.Pol[grx1][gry1]=coef1;
+    if(grx1>Poli1.Gradomaxx){
+        Poli1.Gradomaxx1=grx1;
+    }
+    if(gry1>Poli1.Gradomaxy1){
+        Poli1.Gradomaxy1=gry1;
+    }
+    Poli2.Pol[grx2][gry2]=coef2;
+    if(grx2>Poli.Gradomaxx2){
+        Poli2.Gradomaxx2=grx2;
+    }
+    if(gry2>Poli2.Gradomaxy2){
+        Poli2.Gradomaxy2=gry2;
+    }
+}
+
+void sumar(int grx1, int gry1, int grx2, int gry2){
+    Polinomio2 Poli1, Poli2;
+    if(grx1==grx2 && gry1==gry2){
+        Poli1.Pol[grx1][gry1]=Poli1.Pol[grx1][gry1]+Poli2.Pol[grx2][gry2];
+    }
+    else
+        cout<<"Error no se pueden sumar, ya que los grados son distintos"<<endl;
+
+}
+
+void multiplicar(int grx1, int gry1, int grx2, int gry2){
+    Polinomio2 Poli1, Poli2;
+    float grx, gry, coef;
+    grx= grx1+grx2;
+    gry= gry1+gry2;
+    Poli1.Pol[grx][gry]=Poli1.Pol[grx1][gry1]*Poli2.Pol[grx2][gry2];
+}
+
+void mostrar(int grx1, int gry1){
+    Polinomio2 poli1;
+    float x= poli1.Pol[grx1][gry1];
+    cout<<x<<"(x^"<<grx1<<")(y^"<<gry1<<")"<<endl;
+}
+
+int main(){
+    int grx1, grx2, gry1, gry2, coef1, coef2;
+    cout<<"-------------menu-------------------------"<<endl;
+    cout<<"Ingrese una opcion"<<endl;
+    cout<<"1.-Crear un polinomio"<<endl;
+    cout<<"2.-Mostrar el poliniomio"<<endl;
+    cout<<""<<endl;
+    cout<<""<<endl;
+    cout<<""<<endl;
+    cout<<""<<endl;
+}
